@@ -22,7 +22,7 @@ Local CSV Files → DuckDB (Raw) → dbt (Silver Layer) → dbt (Gold Layer)
 6. Create the tables in silver layer.
 
 ### Next Steps
-1.Implement a schedule in kestra to ingest the raw files and also to trigger the dbt models via dbt cli. 
-2.Implement an incremental model to ingest the data into bronze, silver and gold layers.
-3.Create generic tests to improve data quality in silver layer.
-4.Create facts and dimensions in the gold layer.
+1. Implement a schedule in kestra to ingest the raw files and also to trigger the dbt models via dbt cli.
+2. Implement an incremental model to ingest the data into bronze, silver and gold layers.
+3. Create generic tests to improve data quality in silver layer.
+4. Create facts and dimensions in the gold layer.
