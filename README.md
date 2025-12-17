@@ -13,7 +13,7 @@ Local CSV Files → DuckDB (Raw) → dbt (Silver Layer) → dbt (Gold Layer)
 - dbt-core
 - Docker
 
-###Instrctions
+### Instrctions
 1. Clone the repositroy.
 2. Create a virtual environment for python 3.11 and install dbt-core, duckdb and all the packages.
 3. Load the files into dbt-project/taxi/data/raw/ folder.
