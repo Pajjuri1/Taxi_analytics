@@ -1,0 +1,10 @@
+taxi:
+  target: dev_taxi
+  outputs:
+    dev_taxi:
+      type: duckdb
+      path: warehouse/dev_taxi.duckdb
+      threads: 1
+      extension: [parquet]
+    
+      

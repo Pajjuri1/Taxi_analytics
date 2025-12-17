@@ -1,0 +1,130 @@
+[0m13:12:20.654739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5c7a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5c5410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5dcc10>]}
+
+
+============================== 13:12:20.658252 | cdaf786c-6655-4f55-9a8b-cb5f22e32062 ==============================
+[0m13:12:20.658252 [info ] [MainThread]: Running with dbt=1.10.15
+[0m13:12:20.658476 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'empty': 'None', 'log_format': 'default', 'indirect_selection': 'eager', 'printer_width': '80', 'partial_parse': 'True', 'introspect': 'True', 'use_colors': 'True', 'version_check': 'True', 'log_path': 'logs', 'invocation_command': 'dbt init taxi', 'profiles_dir': '/Users/harshit/.dbt', 'write_json': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None'}
+[0m13:12:20.664755 [info ] [MainThread]: Creating dbt configuration folder at /Users/harshit/.dbt
+[0m13:12:20.665439 [debug] [MainThread]: Starter project path: /Users/harshit/Desktop/Taxi/lib/python3.11/site-packages/dbt/include/starter_project
+[0m13:12:20.667761 [info ] [MainThread]: 
+Your new dbt project "taxi" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:12:20.667890 [info ] [MainThread]: Setting up your profile.
+[0m13:12:34.894305 [info ] [MainThread]: Profile taxi written to /Users/harshit/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m13:12:35.217244 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 14.590692, "process_in_blocks": "0", "process_kernel_time": 0.129711, "process_mem_max_rss": "128335872", "process_out_blocks": "0", "process_user_time": 0.479928}
+[0m13:12:35.218544 [debug] [MainThread]: Command `dbt init` succeeded at 13:12:35.218305 after 14.59 seconds
+[0m13:12:35.219168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10251a1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6aab50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2066d0>]}
+[0m13:12:35.219722 [debug] [MainThread]: Flushing usage events
+[0m13:12:35.591977 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:16:56.178312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4bd510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddec150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddec9d0>]}
+
+
+============================== 15:16:56.180490 | 752eb770-1b2b-4121-b152-2957e6da1188 ==============================
+[0m15:16:56.180490 [info ] [MainThread]: Running with dbt=1.10.15
+[0m15:16:56.180704 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'version_check': 'True', 'no_print': 'None', 'printer_width': '80', 'log_format': 'default', 'introspect': 'True', 'use_colors': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'log_cache_events': 'False', 'static_parser': 'True', 'invocation_command': 'dbt deps', 'write_json': 'True', 'profiles_dir': '/Users/harshit/.dbt', 'debug': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'log_path': 'logs'}
+[0m15:16:56.181018 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/harshit/Desktop/Taxi/dbt-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:16:56.182428 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.031678457, "process_in_blocks": "0", "process_kernel_time": 0.103357, "process_mem_max_rss": "110362624", "process_out_blocks": "0", "process_user_time": 0.451271}
+[0m15:16:56.182616 [debug] [MainThread]: Command `dbt deps` failed at 15:16:56.182575 after 0.03 seconds
+[0m15:16:56.182748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddec9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddec550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10daf6890>]}
+[0m15:16:56.182873 [debug] [MainThread]: Flushing usage events
+[0m15:16:56.522127 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:17:19.791527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e71510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e3d410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e71410>]}
+
+
+============================== 15:17:19.793080 | 6bdf2635-e243-4d5a-9fe8-f8f2e65f52d8 ==============================
+[0m15:17:19.793080 [info ] [MainThread]: Running with dbt=1.10.15
+[0m15:17:19.793293 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'quiet': 'False', 'printer_width': '80', 'log_cache_events': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'partial_parse': 'True', 'log_path': 'logs', 'profiles_dir': '/Users/harshit/.dbt', 'log_format': 'default', 'use_colors': 'True', 'empty': 'None', 'no_print': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'write_json': 'True', 'invocation_command': 'dbt deps', 'indirect_selection': 'eager', 'target_path': 'None', 'static_parser': 'True'}
+[0m15:17:19.793590 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/harshit/Desktop/Taxi/dbt-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:17:19.794526 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.02506475, "process_in_blocks": "0", "process_kernel_time": 0.074688, "process_mem_max_rss": "110641152", "process_out_blocks": "0", "process_user_time": 0.448656}
+[0m15:17:19.794682 [debug] [MainThread]: Command `dbt deps` failed at 15:17:19.794650 after 0.03 seconds
+[0m15:17:19.794807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109bab410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e05650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e07e90>]}
+[0m15:17:19.794927 [debug] [MainThread]: Flushing usage events
+[0m15:17:20.120906 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:45:38.364997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aa8e610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d399410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3affd0>]}
+
+
+============================== 10:45:38.367316 | c7fffba6-6eb5-499d-a12f-381c0778f70a ==============================
+[0m10:45:38.367316 [info ] [MainThread]: Running with dbt=1.10.15
+[0m10:45:38.367542 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'empty': 'None', 'invocation_command': 'dbt debug', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'version_check': 'True', 'quiet': 'False', 'static_parser': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'introspect': 'True', 'warn_error': 'None', 'printer_width': '80', 'debug': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'use_colors': 'True', 'profiles_dir': '/Users/harshit/.dbt', 'log_format': 'default', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'write_json': 'True'}
+[0m10:45:38.374313 [info ] [MainThread]: dbt version: 1.10.15
+[0m10:45:38.374452 [info ] [MainThread]: python version: 3.11.14
+[0m10:45:38.374563 [info ] [MainThread]: python path: /Users/harshit/Desktop/Taxi/bin/python3.11
+[0m10:45:38.374656 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m10:45:38.448550 [info ] [MainThread]: Using profiles dir at /Users/harshit/.dbt
+[0m10:45:38.448747 [info ] [MainThread]: Using profiles.yml file at /Users/harshit/.dbt/profiles.yml
+[0m10:45:38.448849 [info ] [MainThread]: Using dbt_project.yml file at /Users/harshit/Desktop/Taxi/dbt-project/dbt_project.yml
+[0m10:45:38.449873 [info ] [MainThread]: adapter type: duckdb
+[0m10:45:38.450006 [info ] [MainThread]: adapter version: 1.10.0
+[0m10:45:38.450111 [info ] [MainThread]: Configuration:
+[0m10:45:38.450204 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:45:38.450294 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m10:45:38.450382 [info ] [MainThread]: Required dependencies:
+[0m10:45:38.450501 [debug] [MainThread]: Executing "git --help"
+[0m10:45:38.460100 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:45:38.460437 [debug] [MainThread]: STDERR: "b''"
+[0m10:45:38.460549 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:45:38.460648 [info ] [MainThread]: Connection:
+[0m10:45:38.460759 [info ] [MainThread]:   database: taxi_dev
+[0m10:45:38.460841 [info ] [MainThread]:   schema: main
+[0m10:45:38.460921 [info ] [MainThread]:   path: warehouse/taxi_dev.duckdb
+[0m10:45:38.461002 [info ] [MainThread]:   config_options: None
+[0m10:45:38.461078 [info ] [MainThread]:   extensions: None
+[0m10:45:38.461156 [info ] [MainThread]:   settings: {}
+[0m10:45:38.461232 [info ] [MainThread]:   external_root: .
+[0m10:45:38.461310 [info ] [MainThread]:   use_credential_provider: None
+[0m10:45:38.461386 [info ] [MainThread]:   attach: None
+[0m10:45:38.461459 [info ] [MainThread]:   filesystems: None
+[0m10:45:38.461535 [info ] [MainThread]:   remote: None
+[0m10:45:38.461608 [info ] [MainThread]:   plugins: None
+[0m10:45:38.461685 [info ] [MainThread]:   disable_transactions: False
+[0m10:45:38.461877 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m10:45:38.496040 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m10:45:38.518129 [debug] [MainThread]: Using duckdb connection "debug"
+[0m10:45:38.518263 [debug] [MainThread]: On debug: select 1 as id
+[0m10:45:38.518353 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:45:38.522644 [debug] [MainThread]: DuckDB adapter: Error running SQL: select 1 as id
+[0m10:45:38.522752 [debug] [MainThread]: DuckDB adapter: Rolling back transaction.
+[0m10:45:38.522883 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:45:38.523021 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m10:45:38.523114 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/harshit/Desktop/Taxi/dbt-project/dbt_project.yml> not found
+
+[0m10:45:38.523204 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Runtime Error
+  IO Error: Cannot open file "/Users/harshit/Desktop/Taxi/dbt-project/warehouse/taxi_dev.duckdb": No such file or directory
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:45:38.524394 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.18515421, "process_in_blocks": "0", "process_kernel_time": 0.134477, "process_mem_max_rss": "135938048", "process_out_blocks": "0", "process_user_time": 0.505915}
+[0m10:45:38.524551 [debug] [MainThread]: Command `dbt debug` failed at 10:45:38.524514 after 0.19 seconds
+[0m10:45:38.524666 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:45:38.524778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092161d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3af590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d480490>]}
+[0m10:45:38.524907 [debug] [MainThread]: Flushing usage events
+[0m10:45:38.866477 [debug] [MainThread]: An error was encountered while trying to flush usage events

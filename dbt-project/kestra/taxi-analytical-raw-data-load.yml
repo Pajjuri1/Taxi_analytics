@@ -1,0 +1,29 @@
+id: taxi-analytical-raw-data-load
+namespace: company.taxi
+
+tasks:
+
+  - id: load_data
+    type: io.kestra.plugin.jdbc.duckdb.Queries
+    url: jdbc:duckdb:/app/taxi/warehouse/dev_taxi_bronze.duckdb
+    sql: |
+      -- Install required extensions
+      INSTALL parquet;
+      LOAD parquet;
+
+
+      -- Load FHV data (create table only if it doesn't exist)
+      CREATE TABLE fhv_tripdata AS 
+      SELECT * FROM read_parquet('/data/raw/fhvhv_tripdata/*.parquet');
+
+
+      -- Load Yellow taxi data (create table only if it doesn't exist)
+      CREATE TABLE yellow_tripdata AS 
+      SELECT * FROM read_parquet('/data/raw/yellow_tripdata/*.parquet');
+
+
+      -- Taxi zone lookup - always replace if file exists
+      CREATE OR REPLACE TABLE taxi_zone_lookup AS
+      SELECT * FROM read_csv_auto('/data/raw/taxi_zone_lookup/taxi_zone_lookup.csv', header=true);
+
+    fetchType: STORE

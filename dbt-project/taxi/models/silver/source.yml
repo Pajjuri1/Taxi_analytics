@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: main_bronze
+    schema: main_bronze
+    tables:
+      - name: src_yellow_trips
+        description: "source views of yellow taxi trip data"
+      - name: src_fhv_trips
+        description: "Source view of FHV (For-Hire Vehicle) trip data"
+      - name: src_taxi_zones
+        description: "Source view of Taxi zone lookup data"

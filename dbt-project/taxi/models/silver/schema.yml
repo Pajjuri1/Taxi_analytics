@@ -1,0 +1,165 @@
+version: 2
+
+models:
+  # ==================== YELLOW TAXI TRIPS ====================
+  - name: silver_yellow_trip
+    description: |
+      Cleaned and validated yellow taxi trips with business transformations.
+    config:
+      unique_key: trip_id
+    columns:
+      - name: trip_id
+        description: "Unique trip identifier - MD5 hash of natural keys"
+        tests:
+          - unique
+          - not_null
+          # - name: custom_unique_valid_duration  # Proper syntax for custom test
+      
+      - name: tpep_pickup_datetime
+        description: "Pickup timestamp - standardized from raw data"
+        tests:
+          - not_null
+
+      
+      - name: tpep_dropoff_datetime
+        description: "Dropoff timestamp - must be after pickup"
+        tests:
+          - not_null
+      
+      - name: pickup_date
+        description: "Date extracted from pickup timestamp for partitioning"
+        tests:
+          - not_null
+      
+      - name: pickup_hour
+        description: "Hour extracted from pickup timestamp (0-23)"
+      
+      - name: trip_duration_minutes
+        description: "Trip duration in minutes (dropoff - pickup)"
+        tests:
+          - not_null
+      
+      - name: passenger_count
+        description: "Number of passengers (0-9 valid range)"
+
+      
+      - name: trip_distance
+        description: "Trip distance in miles"
+        tests:
+          - not_null
+      
+      - name: PULocationID
+        description: "Pickup location ID - must exist in taxi_zone_lookup"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_taxi_zone')
+              field: LocationID
+      
+      - name: DOLocationID
+        description: "Dropoff location ID - must exist in taxi_zone_lookup"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_taxi_zone')
+              field: LocationID
+      
+      - name: payment_type
+        description: "Payment method code"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6]
+              config:
+                severity: error
+      
+      - name: fare_amount
+        description: "Time and distance fare (must be positive)"
+        tests:
+          - not_null
+      
+      - name: tip_amount
+        description: "Tip amount (can be 0)"
+
+      
+      - name: total_amount
+        description: "Total charged amount"
+        tests:
+          - not_null
+      
+      - name: fare_per_mile
+        description: "Calculated fare per mile"
+      
+      - name: tip_percentage
+        description: "Calculated tip percentage"
+      
+      - name: pickup_borough
+        description: "Standardized pickup borough name"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island', 'Newark Airport']
+      
+      - name: dropoff_borough
+        description: "Standardized dropoff borough name"
+        tests:
+          - not_null
+      
+      - name: location_validation_status
+        description: "Validation result"
+        tests:
+          - accepted_values:
+              values: ['valid']
+      
+      - name: silver_processed_at
+        description: "Timestamp when processed"
+        tests:
+          - not_null
+
+  # ==================== TAXI ZONES DIMENSION ====================
+  - name: silver_taxi_zone
+    description: "Standardized taxi zone dimension table"
+    config:
+      tags: ['silver']
+      unique_key: LocationID
+    columns:
+      - name: LocationID
+        description: "Unique location identifier"
+        tests:
+          - unique
+          - not_null
+      
+      - name: borough_name
+        description: "Standardized borough name"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island', 'Newark Airport']
+      
+      - name: zone_name
+        description: "Standardized zone name"
+        tests:
+          - not_null
+
+      
+      - name: service_zone_name
+        description: "Standardized service zone"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Airport', 'Borough Zone', 'Yellow Zone']
+      
+      - name: original_borough
+        description: "Original borough value"
+        tests:
+          - not_null
+      
+      - name: original_zone
+        description: "Original zone value"
+        tests:
+          - not_null
+      
+      - name: silver_processed_at
+        description: "Timestamp when standardized"
+        tests:
+          - not_null
